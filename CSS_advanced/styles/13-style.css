@@ -19,11 +19,11 @@ a{
     text-decoration: none;
 }
 a[href]:not([href=""]) {
-    font-style: italic;
+
   }
   
   a[href]:visited {
-    color: purple;
+    font-style: italic;
   }
   
   a[href]:hover {
@@ -31,7 +31,7 @@ a[href]:not([href=""]) {
   }
   
   a[href]:active {
-    color: red;
+    color: lightgray;
   }
  
 .visually-hidden{
