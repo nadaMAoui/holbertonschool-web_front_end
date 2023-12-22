@@ -200,12 +200,9 @@
   
   /* Navbar
       ============================= */
-  
-   .nav-item + .nav-item {
-    margin: 0;
-  }
-  
+ 
   .nav {
+    margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
@@ -247,6 +244,10 @@
     width: 100%;
   }
   
+  .nav .nav-item + .nav-item {
+    margin: var(--nav-item-margin);
+  }
+
   /* Header
       ============================= */
   
