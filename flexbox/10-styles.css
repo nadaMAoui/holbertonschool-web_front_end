@@ -368,7 +368,7 @@
   }
 
   .section-hero .section-category{
-    color: var(color-white);
+    color: var(--color-white);
     text-transform: uppercase;
   }
   .section-hero .section-title {
