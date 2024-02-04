@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script type="application/javascript">
+function createFamilyTree() {
+        var tableElement = document.createElement("table");
+
+        var theadElement = document.createElement("thead");
+        var headRow = document.createElement("tr");
+
+        var firstNameCell = document.createElement("th");
+        firstNameCell.textContent = "Firstname";
+
+        var lastNameCell = document.createElement("th");
+        lastNameCell.textContent = "Lastname";
+
+        headRow.appendChild(firstNameCell);
+        headRow.appendChild(lastNameCell);
+
+        theadElement.appendChild(headRow);
+
+        var tbodyElement = document.createElement("tbody");
+
+        var dataRows = [
+            ["Guillaume", "Salva"],
+            ["Paulette", "Salva"],
+            ["Antoine", "Salva"]
+        ];
+
+        dataRows.forEach(function(data) {
+            var row = document.createElement("tr");
+
+            data.forEach(function(cellText) {
+                var cell = document.createElement("td");
+                cell.textContent = cellText;
+                row.appendChild(cell);
+            });
+
+            tbodyElement.appendChild(row);
+        });
+
+        tableElement.appendChild(theadElement);
+        tableElement.appendChild(tbodyElement);
+
+        document.body.appendChild(tableElement);
+    }
+
+    createFamilyTree();
+</script>
+</body>
+</html>

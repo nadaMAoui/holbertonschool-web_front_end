@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script type="application/javascript">
+function createFamilyTree() {
+        document.body.appendChild(
+            document.createElement("table").appendChild(
+                document.createElement("thead").appendChild(
+                    document.createElement("tr").appendChild(
+                        document.createElement("th").textContent = "Firstname",
+                        document.createElement("th").textContent = "Lastname"
+                    )
+                ),
+                document.createElement("tbody").appendChild(
+                    document.createElement("tr").appendChild(
+                        document.createElement("td").textContent = "Guillaume",
+                        document.createElement("td").textContent = "Salva"
+                    ),
+                    document.createElement("tr").appendChild(
+                        document.createElement("td").textContent = "Paulette",
+                        document.createElement("td").textContent = "Salva"
+                    ),
+                    document.createElement("tr").appendChild(
+                        document.createElement("td").textContent = "Antoine",
+                        document.createElement("td").textContent = "Salva"
+                    )
+                )
+            )
+        );
+    }
+
+    createFamilyTree();
+</script>
+</body>
+</html>

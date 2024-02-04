@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script type="application/javascript">
+ function createFamilyTree() {
+        document.body.appendChild(
+            document.createElement("table").appendChild(
+                document.createElement("thead").appendChild(
+                    document.createElement("tr").appendChild(
+                        document.createElement("th").textContent = "Firstname",
+                        document.createElement("th").textContent = "Lastname"
+                    )
+                ),
+                document.createElement("tbody")
+            )
+        );
+    }
+
+    function addNewMember(firstName, lastName, position) {
+        var tbody = document.querySelector('tbody');
+        var newRow = document.createElement("tr").appendChild(
+            document.createElement("td").textContent = firstName,
+            document.createElement("td").textContent = lastName,
+            document.createElement("td").classList.add("delete-cell"),
+            document.createElement("td").addEventListener("click", function() {
+                tbody.removeChild(newRow.parentElement);
+            })
+        );
+
+        if (position === 'before') {
+            tbody.insertBefore(newRow, tbody.firstChild);
+        } else {
+            tbody.appendChild(newRow);
+        }
+    }
+
+    function createForm() {
+        var form = document.createElement("form");
+        var firstNameInput = document.createElement("input");
+        var lastNameInput = document.createElement("input");
+        var positionSelect = document.createElement("select");
+        var beforeOption = document.createElement("option");
+        var afterOption = document.createElement("option");
+        var submitButton = document.createElement("input");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            addNewMember(firstNameInput.value, lastNameInput.value, positionSelect.value);
+        });
+
+        firstNameInput.type = "text";
+        lastNameInput.type = "text";
+
+        beforeOption.value = "before";
+        beforeOption.textContent = "Before";
+        afterOption.value = "after";
+        afterOption.textContent = "After";
+
+        positionSelect.appendChild(beforeOption);
+        positionSelect.appendChild(afterOption);
+
+        submitButton.type = "submit";
+        submitButton.value = "Submit";
+
+        form.appendChild(firstNameInput);
+        form.appendChild(lastNameInput);
+        form.appendChild(positionSelect);
+        form.appendChild(submitButton);
+
+        document.body.insertBefore(form, document.body.firstChild);
+    }
+
+    createFamilyTree();
+    createForm();
+</script>
+</body>
+</html>
